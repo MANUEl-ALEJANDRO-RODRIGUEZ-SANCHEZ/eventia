@@ -1,17 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
-import Componente from './component';
-import Navbar from './navbar';
-
+import Navbar from './components/navbar';
+import Carousel from './components/carousel'
+import CallToAction from './components/call_to_action';
+import EventInfo from './components/event_Info';
+import Contact from './components/contact';
+import Footer from './components/footer';
+import About from './components/about';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <header className="text-center mt-5">
-        <h1>Bienvenido a Eventia</h1>
-        <p className="lead">Explora eventos socioculturales cerca de ti.</p>
-      </header>
+      <Carousel />
+      <CallToAction />
+      <EventInfo />
+      <About />
+      <Contact />
+      <Footer />
     </div>
   );
 }
