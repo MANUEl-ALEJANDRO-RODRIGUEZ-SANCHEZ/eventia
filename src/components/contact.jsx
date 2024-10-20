@@ -1,6 +1,6 @@
 function Contact() {
   return (
-    <section className="py-5 bg-light" id="contact" style={{ backgroundColor: '#f8f9fa' }}>
+    <section className="py-5 bg-light" id="contacto" style={{ backgroundColor: '#f8f9fa' }}>
       <div className="container">
         <h2 className="text-center fw-bold mb-5 text-secondary">Contáctanos</h2>
         <div className="row justify-content-center">

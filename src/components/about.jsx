@@ -2,7 +2,7 @@ function About() {
     return (
       <section
         className="py-5 bg-light"
-        id="acerca_de"
+        id="acerca_de_nosotros"
         style={{
           backgroundImage: 'url(/images/background-about.jpg)',
           backgroundSize: 'cover',
