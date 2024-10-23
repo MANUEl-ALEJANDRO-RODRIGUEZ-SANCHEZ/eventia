@@ -1,3 +1,10 @@
+# Eventia 
+
+Red social dedicada a promover de maneara gratuita eventos sociales y culturales en México
+
+---
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
