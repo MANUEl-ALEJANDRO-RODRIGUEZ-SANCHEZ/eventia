@@ -32,19 +32,19 @@ function Carousel() {
         ></button>
       </div>
       <div className="carousel-inner">
-        <div className="carousel-item active">
+        <div className="carousel-item active" style={{backgroundColor: '#0A3B74'}}>
           <Image
-            src="/images/arte.jpg"
-            className="d-block w-100"
+            src="/images/eventiaTitle.png"
+            className="d-block m-auto w-50"
             alt="Arte"
-            width={1024}
-            height={1024}
-            style={{ height: '400px', objectFit: 'cover' }}
+            width={2048}
+            height={2048}
+            style={{ height: '400px', width: 'auto', objectFit: 'cover'}}
           />
-          <div className="carousel-caption d-none d-md-block" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', padding: '5px 10px', borderRadius: '5px', display: 'inline-block' }}>
+          {/* <div className="carousel-caption d-none d-md-block" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', padding: '5px 10px', borderRadius: '5px', display: 'inline-block' }}>
             <h5 style={{ color: '#fff', fontSize: '1.5rem' }}>Arte</h5>
             <p style={{ color: '#fff', fontSize: '1rem' }}>Descubre los mejores eventos de tu ciudad.</p>
-          </div>
+          </div> */}
         </div>
         <div className="carousel-item">
           <Image

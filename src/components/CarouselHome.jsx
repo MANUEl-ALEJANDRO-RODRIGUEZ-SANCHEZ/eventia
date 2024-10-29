@@ -1,3 +1,4 @@
+import 'animate.css';
 import Image from "next/image";
 
 function CarouselHome() {
@@ -5,7 +6,7 @@ function CarouselHome() {
     <>
         <div className="carousel-container">
             <div className="carousel-title">
-                <h1>Eventia</h1>
+                <h1 className="animate__animated animate__rubberBand animate__infinite">Eventia</h1>
                 <br />
                 <h2>Aqui encontrarás los mejores eventos sociales y culturales para ti en México, gracias a nuestro algoritmo de recomendación</h2>
                 <br />

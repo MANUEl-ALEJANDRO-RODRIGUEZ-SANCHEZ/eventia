@@ -17,9 +17,9 @@ export default async function Index() {
   return (
     <>
       {session ? (
-        <>
+        <div className="main">
           <Home/>
-        </>
+        </div>
       ) : (
         <>
           <WelcomePage/>

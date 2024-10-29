@@ -4,9 +4,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { signIn, useSession, signOut } from "next-auth/react";
 import Loading from "@/app/loading";
+import { useState } from "react";
 
 function Navbar() {
     const { data: session, status } = useSession();
+    const [category, setCategory] = useState("")
+
+    const handleCategoryChange = (e) => {
+        setCategory(e.target.value);
+    };
 
     if (status === "loading") {
         return (
@@ -32,14 +38,42 @@ function Navbar() {
                                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center">
                                         <li className="nav-item me-4">
-                                            <form className="d-flex">
-                                                <input className="form-control me-2" type="search" placeholder="Buscar eventos..." aria-label="Search" />
-                                                <button className="btn btn-outline-success" type="submit">Buscar</button>
-                                            </form>
+                                        <form className="d-flex">
+                                            <select className="form-select me-2" aria-label="Buscar por categoría" defaultValue="" value={category} onChange={handleCategoryChange}>
+                                                <option value="" disabled>Selecciona una categoría...</option>
+                                                <option value="Arte">Arte</option>
+                                                <option value="ciencia">Ciencia</option>
+                                                <option value="Cine y Teatro">Cine y Teatro</option>
+                                                <option value="Deportes">Deportes</option>
+                                                <option value="Diversidad y Derechos Humanos">Diversidad y Derechos Humanos</option>
+                                                <option value="Educación">Educación</option>
+                                                <option value="Emprendimiento">Emprendimiento</option>
+                                                <option value="Familia y Comunidad">Familia y Comunidad</option>
+                                                <option value="Festividades y Tradiciones">Festividades y Tradiciones</option>
+                                                <option value="Fotografía y Video">Fotografía y Video</option>
+                                                <option value="Gastronomía">Gastronomía</option>
+                                                <option value="Historia y Patrimonio Cultural">Historia y Patrimonio Cultural</option>
+                                                <option value="Literatura">Literatura</option>
+                                                <option value="Medio Ambiente">Medio Ambiente</option>
+                                                <option value="Moda y Diseño">Moda y Diseño</option>
+                                                <option value="Música">Música</option>
+                                                <option value="Negocios y Finanzas">Negocios y Finanzas</option>
+                                                <option value="Política y Gobierno">Política y Gobierno</option>
+                                                <option value="Recaudación">Recaudación</option>
+                                                <option value="Religión y Espiritualidad">Religión y Espiritualidad</option>
+                                                <option value="Salud y Bienestar">Salud y Bienestar</option>
+                                                <option value="Sostenibilidad">Sostenibilidad</option>
+                                                <option value="Sociedad">Sociedad</option>
+                                                <option value="Tecnología">Tecnología</option>
+                                                <option value="Voluntariado">Voluntariado</option>
+                                            </select>
+                                            <Link className="btn btn-outline-success" href={`/buscar/${category}`}>Buscar</Link>
+                                        </form>
+
                                         </li>
         
                                         <li className="nav-item">
-                                            <Link className="nav-link" href="#">Eventos Top</Link>
+                                            <Link className="nav-link" href="/eventos-top">Eventos Top</Link>
                                         </li>
                                         <li className="nav-item">
                                             <Link className="nav-link" href="/nosotros">Nosotros</Link>
@@ -52,7 +86,7 @@ function Navbar() {
                                                 <i className="fas fa-caret-down ms-2"></i>
                                             </Link>
                                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <li><Link className="dropdown-item" href="#">Perfil</Link></li>
+                                                <li><Link className="dropdown-item" href="/perfil">Perfil</Link></li>
                                                 <li><Link className="dropdown-item" href="#">Configuración</Link></li>
                                                 <li><Link className="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalLogOut">Cerrar sesión</Link></li>
                                             </ul>
