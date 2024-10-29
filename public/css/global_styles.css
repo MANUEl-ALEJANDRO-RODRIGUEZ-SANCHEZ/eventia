@@ -8,9 +8,14 @@
 body{
     font-family: "Roboto", sans-serif;
     scroll-behavior: smooth;
-    max-width: 100vw;
     overflow-x: hidden;
 }
+
+.main{
+    width: 85vw;
+    margin: auto;
+}
+
 
 /******************** Navbar ********************/
 #navbar-eventia{
@@ -57,26 +62,39 @@ body{
     }
 }
 
-/******************** card ********************/
-@keyframes slideUp {
-    0% {
-      opacity: 0;
-      transform: translateY(200px); /* Start from the bottom */
-    }
+/******************** cards container ********************/
+.events-container{
+    display: flex;
+    width: 100%;
+    margin: auto;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
 
-    100% {
-      opacity: 1;
-      transform: translateY(0); /* reaches its final position */
+    .card {
+        width: 45%;
+        text-decoration: none;
+        padding: 10px;
+        opacity: 0;
+        transition: opacity 1s ease-out, transform 2s ease-out;
+        transition: all 0.3s ease-out;
+    
+        .likes-event{
+            margin: 15px auto;
+            padding: 3px;
+        }
     }
-}
-  
-.card {
-    opacity: 0;
-    transition: opacity 1s ease-out, transform 2s ease-out;
-}
-  
-.card.show {
-    animation: slideUp 1s ease-out forwards;
+    
+    .card:hover{
+        box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+        cursor: pointer;
+        background-color: #f2f2f2;
+        transform: translateY(-10px) !important;
+    }
+      
+    .card.show {
+        animation: slideUp 1s ease-out forwards;
+    }
 }
   
 /******************** footer ********************/
@@ -113,9 +131,9 @@ body{
 
         h1{
             text-align: center;
-            font-size: 5rem;
+            font-size: 6rem;
             font-family: "Bebas Neue", sans-serif;
-            animation: pulseTitle 1.75s infinite;
+            /* animation: pulseTitle 1.75s infinite; */
         }
 
         h2{
@@ -139,7 +157,134 @@ body{
     }
 }
 
+/********************* profile *********************/
+.profile-container{
+    width: 85vw;
+    margin: 25px auto;
+    
+    .user-info{
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        width: 100%;
+        height: fit-content;
+        padding: 20px;
+        border: thin solid var(--main-color);
+        border-radius: 20px;
+    }
+    
+    .user-info .user-info-image{
+        grid-area: 1 / 1 / 2 / 2;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+    
+    .user-info .info{
+        grid-area: 1 / 2 / 2 / 3;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .info-description{
+        border: thin solid var(--main-color);
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 18px;
+        background-color: #e6ecf3;
+        width: 100%;
+        height: fit-content;
+    }
+
+    .btn-change-description, .btn-create-event{
+        width: fit-content;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: var(--main-color);
+        background-color: #fff;
+        border: thin solid var(--main-color);
+        border-radius: 10px;
+        transition: all .3s;
+        margin-bottom: 15px;
+    }
+
+    .btn-change-description:hover, .btn-create-event:hover{
+        background-color: var(--main-color);
+        color: #fff;
+        transform: scale(1.05);
+    }
+
+    .txt-description{
+        height: 200px;
+    }
+
+    .events-cotainer{
+        margin-top: 50px;
+        width: 100%;
+        height: fit-content;
+        padding: 10px;
+        border-radius: 15px;
+        border: thin solid var(--main-color);
+        display: flex;
+        justify-content: space-around;
+        gap: 30px;
+    }
+
+    .own-events-container, .favorites-events-container{
+        width: 50%;
+    }
+
+    .own-events-container h2, .favorites-events-container h2{
+        font-size: 20px;
+    }
+
+    .card{
+        width: auto;   
+    }
+
+    .card:hover{
+        box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+        cursor: pointer;
+        background-color: #f2f2f2;
+        transform: translateY(-10px) !important;
+    }
+
+    .own-events, .favorites-events{
+        margin-top: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+/******************** top events ********************/
+.top-events{
+    width: 85vw;
+    margin: 25px auto;
+    padding: 10px;
+    border-radius: 10px;
+    /* border: thin solid var(--main-color); */
+    
+    h2{
+        font-size: 30px;
+        margin-bottom: 40px;
+    }
+}
+
+/******************** responsive desing ********************/
+
 @media screen and (max-width: 850px) {
+    .main{
+        width: 90vw;
+    }
+
+    .card {
+        width: 90%;
+    }
+
     .carousel-container{
         display: grid;
         grid-template-columns: 1fr;
@@ -158,20 +303,65 @@ body{
             grid-area: 2 / 1 / 3 / 2;
         }
     }
+
+    .profile-container{
+        width: 95vw;
+        margin: 20px auto;
+    
+        .user-info{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 3fr;
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            text-align: center;
+        }
+
+        .user-info .user-info-image{
+            grid-area: 1 / 1 / 2 / 2;
+            /* height: 100px; */
+            width: auto;
+            margin: auto;
+        }
+        
+        .user-info .info{
+            grid-area: 2 / 1 / 3 / 2;
+        }
+
+        .events-cotainer{
+            flex-direction: column;
+            align-items: center;
+
+            .own-events-container, .favorites-events-container{
+                width: 100%;
+            }
+        }
+    }
+
+    .events-container{
+        flex-direction: column;
+        align-items: center;
+    
+        .card {
+            width: 90%;
+        }
+    }
 }
+
+/******************** animations ********************/
 
 @keyframes slideInLeft {
     from {
-      transform: translateX(-100%); 
-      opacity: 0;
+        transform: translateX(-100%); 
+        opacity: 0;
     }
-
+    
     to {
-      transform: translateX(0); 
-      opacity: 1;
+        transform: translateX(0); 
+        opacity: 1;
     }
 }
-  
+
 
 @keyframes gradient-animation {
     0% {
@@ -189,12 +379,24 @@ body{
     0% {
         transform: scale(1.2);
     }
-  
+    
     50% {
         transform: scale(1.5);
     }
-
+    
     100%{
         transform: scale(1.2);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(200px); /* Start from the bottom */
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* reaches its final position */
     }
 }
