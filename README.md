@@ -12,6 +12,8 @@ You must first clone the repository to your computer or download the files direc
 
 Once you have the project locally on your PC, you must have Node installed
 
+You need to create a .env.local file to use environment variables. To obtain these variables, you must send an email to manuel.rodriguez9120@alumnos.udg.mx requesting this information.
+
 Once the database backup, the services above and the cloned project have been imported, we will enter the following command (as appropriate) to run the project locally
 
 ```bash
