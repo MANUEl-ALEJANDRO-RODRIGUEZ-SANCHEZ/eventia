@@ -126,7 +126,7 @@ function Navbar() {
                     <nav className="navbar navbar-expand-lg" style={{ backgroundColor: '#0A3B74' }}>
                         <div className="container-fluid">
                             <a className="navbar-brand fw-bold text-white" href="#home">
-                            <img src="/images/logo-placeholder.png" alt="Eventia Logo" width="40" height="40" className="me-2" />
+                            <Image src="/images/logo-placeholder.png" alt="Eventia Logo" width="40" height="40" className="me-2" />
                             Eventia
                             </a>
 
