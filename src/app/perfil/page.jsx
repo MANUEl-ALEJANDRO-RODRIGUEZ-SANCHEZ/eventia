@@ -6,10 +6,10 @@ import Image from "next/image";
 import ProfileInfoPage from "@/components/ProfileInfoPage";
 import EventCards from "@/components/Card";
 
-const session = await getServerSession(authOptions);
-const {name, email, image} = session.user;
 
 async function page() {
+    const session = await getServerSession(authOptions);
+    const {name, email, image} = session.user;
     const [rows] = await conn.query(`SELECT * FROM users WHERE email = ?`, [email]);
     
     const user = {
@@ -34,7 +34,7 @@ async function page() {
                     <div className="own-events">
                         {
                             ownEvents.map((event, index) => (    
-                                <Link href={`/eventos/${event.id_event}`} className="card mb-3" style={{maxWidth: '540px', textDecoration: "none"}}>
+                                <Link href={`/eventos/${event.id_event}`} className="card mb-3" style={{maxWidth: '540px', textDecoration: "none"}} key={event.id_event}>
                                     <div className="row g-0">
                                     <div className="col-md-4">
                                         <Image src={`/images_events/${event.image}`} className="img-fluid rounded-start" alt="Imagen del evento" width={1024} height={1024}/>
@@ -59,7 +59,7 @@ async function page() {
                     <div className="favorites-events">
                         {
                             likes.map((event, index) => (    
-                                <Link href={`/eventos/${event.id_event}`} className="card mb-3" style={{maxWidth: '540px', textDecoration: "none"}}>
+                                <Link href={`/eventos/${event.id_event}`} className="card mb-3" style={{maxWidth: '540px', textDecoration: "none"}}key={event.id_event}>
                                     <div className="row g-0">
                                     <div className="col-md-4">
                                         <Image src={`/images_events/${event.image}`} className="img-fluid rounded-start" alt="Imagen del evento" width={1024} height={1024}/>
