@@ -1,4 +1,4 @@
-import { getServerSession } from "next-auth";
+/*import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { conn } from "../../../config/db";
 import Link from "next/link";
@@ -93,4 +93,8 @@ async function page() {
     )
 }
 
-export default page;
+export default page;*/
+
+export default function page() {
+    return <h1>Page</h1>
+}
