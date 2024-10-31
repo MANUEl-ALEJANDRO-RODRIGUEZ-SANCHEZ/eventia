@@ -8,13 +8,13 @@ This is a web application developed mainly with [Next.js](https://nextjs.org) an
 
 ## Getting Started
 
-You must first clone the repository to your computer or download the files directly in the GitHub graphical interface
+First you need to clone the repository to your computer or download the files directly in the GitHub graphical interface
 
-Once you have the project locally on your PC, you must have Node installed
+Once you have the project locally on your PC, you must have Node and Xampp installed for the mysql and apache services
 
-You need to create a .env.local file to use environment variables. To obtain these variables, you must send an email to manuel.rodriguez9120@alumnos.udg.mx requesting this information.
+Then you will have to turn on the mysql and apache services of xampp to import the database backup, once the database backup is imported, in the project you must include or modify the environment variables of the .local.env file so that they match the database credentials
 
-Once the database backup, the services above and the cloned project have been imported, we will enter the following command (as appropriate) to run the project locally
+Then in the project console you must enter the following command to run the project, as appropriate
 
 ```bash
 npm run dev
