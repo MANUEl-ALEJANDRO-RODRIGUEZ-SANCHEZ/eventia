@@ -28,10 +28,15 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Authors
-* Manuel Rodriguez
-* Noel Mora
-* Sergio CLaustro
+## Functions
+* Login with Google authentication
+* The main page shows the recommended events for each user according to their preferences thanks to the content-filtered algorithm with cosine similarity
+* Top events page (shows events in order of popularity)
+* Most recent events page
+* Search by event category
+* User profile page where self-created events and likes are shown
+* Create event
+* Create event with the help of artificial intelligence
 
 ## Welcome Page
 ![image](https://github.com/user-attachments/assets/3c0de616-d377-4a2b-a17e-b6df7bed1c70)
@@ -50,3 +55,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Profile
 ![image](https://github.com/user-attachments/assets/965c2134-4d59-43f5-87b6-7b952b2a0371)
 
+## Authors
+* Manuel Rodriguez
+* Noel Mora
+* Sergio CLaustro
